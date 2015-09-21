@@ -694,7 +694,7 @@ NSString static *const kYTPlayerStaticProxyRegexPattern = @"^https://content.goo
                                                      ofType:@"html"
                                                 inDirectory:@"Assets"];
   }
-    
+  
   NSString *embedHTMLTemplate =
       [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
 
@@ -830,9 +830,7 @@ NSString static *const kYTPlayerStaticProxyRegexPattern = @"^https://content.goo
     static NSBundle* frameworkBundle = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        NSString* mainBundlePath = [[NSBundle bundleForClass:[self class]] resourcePath];
-        NSString* frameworkBundlePath = [mainBundlePath stringByAppendingPathComponent:@"Assets.bundle"];
-        frameworkBundle = [NSBundle bundleWithPath:frameworkBundlePath];
+        frameworkBundle = [NSBundle bundleForClass:[self class]];
     });
     return frameworkBundle;
 }
