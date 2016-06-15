@@ -710,7 +710,7 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
   NSError *error = nil;
   NSString *path = [[NSBundle bundleForClass:[YTPlayerView class]] pathForResource:@"YTPlayerView-iframe-player"
                                                    ofType:@"html"
-                                              inDirectory:@"Assets"];
+                                              inDirectory:@"Assets.bundle/Assets"];
     
   // in case of using Swift and embedded frameworks, resources included not in main bundle,
   // but in framework bundle
